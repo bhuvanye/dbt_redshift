@@ -1,0 +1,30 @@
+
+version: 2
+
+sources:
+  - name: 'model1'
+    description: 'Person Details'
+    database: 'dbt_database'
+    schema: 'PUBLIC'
+    tables:
+     - name: 'dbt_person_details'
+       description: 'details of a person'
+       columns:
+        - name: id
+          description: 'unique id of person'
+          tests:
+            - unique
+            - not_null 
+            
+  - name: 'model2'
+    description: 'Person Phone no'
+    database: 'dbt_database'
+    schema: 'PUBLIC'
+    tables:
+     - name: 'dbt_person_phoneno'
+       description: 'phoneno of a person with id'
+       columns:
+        - name: id
+          description: 'id of person'
+          tests:
+            - not_null 
